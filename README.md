@@ -34,8 +34,7 @@ node import.js \
 - Reads the exported JSON, determines each UID’s kind, and strips Strapi-managed fields (`id`, timestamps, `documentId`, `localizations`, etc.) so payloads resemble what the Admin UI sends.
 - Uses the same `/content-manager/{collection-types|single-types}` endpoints the UI uses; each collection entry is `POST`ed as-is, each single type is `PUT`ed once.
 - Tracks stats (created/skipped/failed) and stops retrying a UID if Strapi returns `405 Method Not Allowed`.
-
-**CLI / env options**
+  **CLI / env options**
 
 | Option / Env                                       | Description                                                                                                                     |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |

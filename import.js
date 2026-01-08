@@ -73,16 +73,17 @@ const parseBoolean = (value) => {
 const parseOrder = (value) =>
   resolveStringList(value).map((uid) => uid.trim());
 
-const STRAPI_URL =
-  cliArgs.url ?? process.env.STRAPI_URL ?? DEFAULT_STRAPI_URL;
+const STRAPI_URL ="http://localhost:1337";
+  // cliArgs.url ?? process.env.STRAPI_URL ?? DEFAULT_STRAPI_URL;
 const EXPORT_PATH = path.resolve(
   process.cwd(),
-  cliArgs.file ?? "strapi-export.json"
+  cliArgs.file ?? "./strapi-export.json"
 );
 const TOKEN =
-  cliArgs.token ??
-  process.env.STRAPI_ADMIN_TOKEN ??
-  process.env.STRAPI_TOKEN;
+"009c2b9476758106c8882ef1891c39530b8fbd21b1b7f2ce40838c52259c3df5a8c5e34642073d4f83c9398f784671970bd9d400f2a48ce0b51db71257fb8ca3cc50e0ed7a6e72f0c8e22f434970f0109743e48b733b4d17067d798be7c9f975af260e470a354aee7a64683ad6d5a3b2b07a6c9c55b188ca43c914830fd2ae1c";
+  // cliArgs.token ??
+  // process.env.STRAPI_ADMIN_TOKEN ??
+  // process.env.STRAPI_TOKEN;
 const includeProtected =
   parseBoolean(cliArgs["include-protected"]) ??
   parseBoolean(process.env.STRAPI_INCLUDE_PROTECTED) ??
